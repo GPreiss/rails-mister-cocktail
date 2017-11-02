@@ -1,2 +1,9 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktail/show.html.erb</p>
+<div class="container">
+  <div class="text-center">
+    <h2><%= @cocktail.name %></h2>
+
+    <%= link_to "Add a new dose", new_cocktail_dose_path %>
+
+    <%= link_to "Delete a dose", cocktail_dose_path %>
+  </div>
+</div>

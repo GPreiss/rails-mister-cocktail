@@ -1,2 +1,11 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktail/new.html.erb</p>
+<h2>Create a new cocktail with required fields</h2>
+<%= simple_form_for @cocktail do |f| %>
+<%= f.input :name %>
+<%= f.simple_fields_for :ingredients do |p| %>
+<%= p.input :name %>
+<%= f.simple_fields_for :doses do |s| %>
+<%= s.input :description %>
+<% end %>
+<% end %>
+<%= f.submit %>
+<% end %>
