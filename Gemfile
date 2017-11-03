@@ -33,6 +33,7 @@ gem "simple_form"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 ruby '2.3.5'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,3 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
+
+#Frontend gem
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'font-awesome-sass', '~> 4.2.0'

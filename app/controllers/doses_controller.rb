@@ -19,7 +19,7 @@ before_action :find_cocktail, only: [:show, :new, :create]
   def destroy
     @dose = Dose.find(params[:id])
     @dose.destroy
-    redirect_to cocktails_path
+    redirect_to :back
   end
 
   def dose_params
