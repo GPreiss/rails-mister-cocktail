@@ -34,6 +34,9 @@ gem "simple_form"
 # gem 'capistrano-rails', group: :development
 ruby '2.3.5'
 gem 'figaro'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

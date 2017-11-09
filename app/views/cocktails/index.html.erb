@@ -1,19 +1,36 @@
-<h1 class="text-center">Your cocktail list</h1>
-
-<div class="text-center padded">
-  <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+<div class="container">
+  <div class="banner" style="background-image: url('http://photos.mandarinoriental.com/is/image/MandarinOriental/dmo-15-may-people-2?$DMOFancyLand$&fit=wrap&ext=.jpg');">
+    <div class="banner-content">
+      <h1 class="text-center">FIND A COCKTAIL</h1>
+      <div class="search">
+        <input type="text" class="searchTerm" placeholder="moscow mule">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <div class="text-center padded">
+        <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-cocktail" %>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-<div class="container">
+
+
+
+<div class="container" id="cocktail-cards">
+  <h2 class="text-center">Popular Concoctions</h2>
   <div class="row">
-    <ul>
-      <% @cocktails.each do |cocktail| %>
-      <li>
-        <%= link_to(cocktail.name, cocktail) %>
-      </li>
-      <% end %>
-    </ul>
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: url('https://images.pexels.com/photos/372959/pexels-photo-372959.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');">
+        <div class="card-category">
+          <h3><%= link_to(cocktail.name, cocktail, class: "card-link") %></h3>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
 

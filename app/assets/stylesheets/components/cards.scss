@@ -1,0 +1,53 @@
+.card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 1px black;
+  border-radius: 3px;
+}
+#cocktail-cards{
+  padding: 8px 0;
+  h2{
+    font-family: Raleway, sans-serif;
+    font-weight: lighter;
+    opacity: 0.8;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+  }
+  h3{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+  }
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0.9;
+  color: white;
+}
+.card-link:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+.card-link:visited {
+  color: white;
+  opacity: 1;
+}
