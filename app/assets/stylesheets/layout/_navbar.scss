@@ -9,13 +9,23 @@
   justify-content: space-between;
   position: relative;
 }
+ a:hover{
+    opacity: 0.6;
+    background-color: clear;
+}
+ a:visited{
+    opacity: 1;
+    background-color: clear;
+}
 
-.navbar-cocktail-brand img {
+.navbar-cocktail-brand{
   height: 50px;
   text-align: center;
   margin:0;
   float:none;
+  width: 50px;
 }
+
 
 .navbar-cocktail-right {
   display: flex;

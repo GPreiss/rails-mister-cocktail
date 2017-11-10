@@ -1,32 +1,37 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1><%= @cocktail.name %></h1>
-      <%= link_to 'Back', cocktails_path %>
+      <div class="title-content">
+        <h1 class="text-center"><%= @cocktail.name %></h1>
+        <div class="cocktail-img">
+          <img src="https://assets.epicurious.com/photos/56265828219057901cc7320b/6:4/w_996%2Ch_664%2Cc_limit/56390125_manhattan.jpg" class="img-responsive">
+        </div>
+      </div>
+      <div class="cocktail-description">
+        <div class="text-center">
+          <ul>
+            <% @cocktail.doses.each do |dose| %>
+            <li>
+              <%= dose.description %> of <%= link_to dose.ingredient.name, cocktail_path(dose.ingredient) %>
+              (<%= link_to "delete", dose_path(@cocktail, dose), method: :delete %>)
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="cocktail-form">
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
 
-      <ul>
-        <% @cocktail.doses.each do |dose| %>
-          <li>
-            <%= dose.description %> of <%= link_to dose.ingredient.name, cocktail_path(dose.ingredient) %>
-            (<%= link_to "delete", dose_path(@cocktail, dose), method: :delete %>)
-          </li>
-        <% end %>
-      </ul>
+          <%= f.input :description, placeholder: "2 teaspoons" %>
+          <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Choose one" %>
 
-
-
-      <%= simple_form_for [@cocktail, @dose] do |f| %>
-
-        <%= f.input :description, placeholder: "2 teaspoons" %>
-        <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Choose one" %>
-
-        <%= f.submit "Add dose", class: "btn btn-primary"%>
-      <% end %>
+          <%= f.submit "Add dose", class: "btn btn-danger"%>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-<%= cl_image_tag("qehws05xgbr7flbtfbqa",
-      width: 400, height: 300, crop: :fill) %>
 
 

@@ -1,14 +1,24 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1>New Cocktail</h1>
-      <%= simple_form_for(@cocktail) do |f| %>
-      <%= f.input :name, placeholder: "Mojito" %>
-      <%= f.input :photo , class: "btn btn-primary" %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.button :submit, class: "btn btn-primary"  %>
-      <% end %>
-      <%= link_to 'Back', cocktails_path %>
+  <div class="banner" style="background-image: url('https://assets.epicurious.com/photos/5851b180423dd8e174fbcce4/6:4/w_620%2Ch_413/Midnight-Sparkler-13122016.jpg');">
+    <div class="new-banner-content">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <div class="new-title-content">
+            <h1 class="text-center">New Cocktail</h1>
+          </div>
+
+          <div class="text-center">
+            <div class="new-form">
+              <%= simple_form_for(@cocktail) do |f| %>
+              <%= f.input :name, placeholder: "Mojito" %>
+              <%= f.input :photo , class: "btn btn-warning" %>
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.button :submit, class: "btn btn-warning"  %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
